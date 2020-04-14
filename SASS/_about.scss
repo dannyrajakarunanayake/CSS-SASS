@@ -1,0 +1,47 @@
+.about{
+  &-bio-img{
+    padding-top: 3rem;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba($bg-c, 0.9),rgba($sec-c,0.1)),
+    url('/dist/img/desola-lanre-ologun-zYgV-NGZtlA-unsplash.jpg') center ;
+    background-size: cover;
+    @include flex(column);
+  }
+
+  &-bio{
+    width: 65%;
+    margin: auto;
+    .text-xl{
+      padding-bottom: 2rem;
+    }
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  .jobs{
+    width: 65%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 3rem;
+
+    &-job{
+      background: lighten($bg-c, 0%);
+      border-color: 1px solid $prim-c;
+      border-bottom: 5px solid $sec-c;
+      box-shadow: 0 10px 10px rgba($sec-c, 0.9);
+      padding: 1rem;
+
+      h2,h3{
+        margin: 0.5rem 0;
+      }
+      h6{
+        margin: 0.3rem 0;
+      }
+    }
+  }
+}

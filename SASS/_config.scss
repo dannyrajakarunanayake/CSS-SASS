@@ -53,6 +53,34 @@ $danger-c: #f44336;
   @include transition-ease;
 }
 
+@mixin success-hover{
+  @include hover;
+  @include transition-ease;
+  background-color: $success-c;
+  box-shadow: 0 5px 10px rgba($success-c , 0.8);
+}
+
+
+//Flex mixin
+@mixin flex($flex-dir) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: $flex-dir;
+}
+
+//Grid mixin
+@mixin grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
 //Buttons
 .btn {
   display: inline-block;
@@ -64,10 +92,12 @@ $danger-c: #f44336;
   border-radius: 5px;
   margin-right: 0.5rem;
   @include transition-ease;
-  outline: none;border: 1px solid $prim-c;
+  outline: none;
+  border: 1px solid $prim-c;
   border-bottom: 1px solid;
   box-shadow: 0 5px 10px rgba($sec-c, 0.5);
   &:hover{
+    @include hover;
     opacity: 0.8;
   }
   text-transform: uppercase;
@@ -88,9 +118,33 @@ $danger-c: #f44336;
   font-size: 0.8rem;
   text-transform: lowercase;
 }
-//Mixin
+
 //Display
+@mixin media-xl{
+  @media screen and(min-width: 1600px){
+    @content;
+  }
+}
+@mixin media-lg{
+  @media screen  and(min-width: 1024px){
+    @content;
+  }
+}
+@mixin media-md{
+  @media screen and(min-width: 400px){
+    @content;
+  }
+}
+
 //Footer
+@mixin footer-rotate {
+  .copy {
+    transform: rotate(90deg) translate(-3rem, -5rem);
+  }
+  .social {
+    @include flex(column);
+  }
+}
 
 
 
